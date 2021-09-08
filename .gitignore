@@ -10,6 +10,8 @@
 # backend dependencies
 /backend/Pipfile.lock
 /backend/.venv
+/backend/.env
+/backend/.flaskenv
 
 # testing
 /coverage
