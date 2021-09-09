@@ -10,3 +10,11 @@ class User(db.Model):
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(255), nullable=False)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "first": self.first_name,
+            "last_name": self.last_name,
+            "email": self.email
+        }

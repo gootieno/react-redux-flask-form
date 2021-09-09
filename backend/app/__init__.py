@@ -7,11 +7,13 @@ from app.routes import bp
 
 
 app = Flask(__name__)
-CORS(app)
+
 app.config.from_mapping({
   'SQLALCHEMY_DATABASE_URI': os.environ.get('DATABASE_URL'),
   'SQLALCHEMY_TRACK_MODIFICATIONS': False,
 })
+
 app.register_blueprint(bp)
 db.init_app(app)
 Migrate(app, db)
+CORS(app)
